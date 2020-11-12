@@ -1,9 +1,19 @@
+<br>
+<br>
+
 <div>
-    <form (ngSubmit)="searchFor(searchForm)" #searchForm="ngForm">
-        <div class="form-group">
-          <input type="text" class="form-control" name="find" placeholder="Enter username"[(ngModel)]= "searchInfo.find"  #find='ngModel'>
-          <button type="submit" class="btn btn-group"> Search</button>
+  <form (ngSubmit)="searchFor(searchForm)" #searchForm="ngForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="find" placeholder="Enter username" [(ngModel)]="searchInfo.find"
+            #find='ngModel'>
         </div>
-      </form>
-      
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-success"> Search</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
 </div>

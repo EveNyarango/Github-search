@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { UserComponent } from './user/user.component';
-import { from } from 'rxjs';
+
 import { SearchComponent } from './search/search.component';
 
 @NgModule({
