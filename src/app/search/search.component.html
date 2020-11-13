@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <div class="row">
     <div class="col-md-6">
-        <app-search-form (getName)='findUser($event)'></app-search-form>
+        <app-search-form (getName)='githubUser($event)'></app-search-form>
     </div>
 
 </div>
@@ -19,7 +19,7 @@ table that picks data -->
             <tbody>
               <tr>
                 <th scope="row"> Github Username:</th>
-                <td>{{users.html_url}}</td>
+                <td>{{users.login}}</td>
 
               </tr>
 
@@ -48,7 +48,7 @@ table that picks data -->
 
 <div class="col-md-5">
     <!-- insert avatar -->
-  <img src="">
+  <img src="{{users.avatar_url}}" class="radius">
 </div>
 
 </div>
@@ -58,7 +58,7 @@ table that picks data -->
 <h2>Github Repositories</h2>
 <div class="container">
 <div class="row">
-    <div class="col-md-6"> 
+    <div class="col-md-6" *ngFor='let repo of repo'> 
         <div class="card">
 <p>
     {{repo.name}}

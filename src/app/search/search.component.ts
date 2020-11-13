@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from './../search.service';
+import { HttpClient } from '@angular/common/http';
 import { Repository } from './../repository';
 import { User } from '../user';
 
@@ -9,18 +11,28 @@ import { User } from '../user';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-public searchMe = 'EveNyarango';
-public githubUser: string;
+
 users:User;
 repo:Repository;
 
-findUser(username){
-  this.githubUser = '';
-  this.searchMe;
-}
-  constructor() { }
+
+  constructor(private searchService: SearchService) { }
+
+  githubUser(searchName:any){
+        this.searchService.githubUser(searchName).then((success)=>{ 
+          this.users=this.searchService.users;
+          
+        }, (error)=>{ console.log(error) })    
+                 
+        this.searchService.getUserrepos(searchName).then((success)=>{
+          this.repo=this.searchService.repo;
+          
+        },
+         (error)=>{ console.log(error)})
+  }
 
   ngOnInit(): void {
+    this.githubUser("EveNyarango");
   }
 
 }

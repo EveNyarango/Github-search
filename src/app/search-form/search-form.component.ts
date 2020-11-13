@@ -6,12 +6,12 @@ import { Search } from './../search';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-searchInfo = new Search('');
-@Output () getName = new EventEmitter<Search>();
+  searchName:string;
+@Output () getName = new EventEmitter<any>();
    
-searchFor(data){
-  this.getName.emit(data.value.find)
-  data.reset();
+searchFor(){
+  this.getName.emit(this.searchName)
+ 
 }
 constructor() { }
 

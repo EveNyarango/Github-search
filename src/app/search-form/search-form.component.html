@@ -2,15 +2,14 @@
 <br>
 
 <div>
-  <form (ngSubmit)="searchFor(searchForm)" #searchForm="ngForm">
+  <form >
     <div class="form-group">
       <div class="row">
         <div class="col-md-6">
-          <input type="text" class="form-control" name="find" placeholder="Enter username" id="inp"     [(ngModel)]="searchInfo.find"
-            #find='ngModel'>
+          <input type="text" class="form-control" name="searchName" placeholder="Enter username" id="inp"     [(ngModel)]="searchName">
         </div>
         <div class="col-md-6">
-          <button type="submit" class="btn btn-success" id="sah"> Search</button>
+          <button type="submit" class="btn btn-success" id="sah" (click)="searchFor()"> Search</button>
         </div>
       </div>
     </div>

@@ -34,14 +34,9 @@ export class SearchService {
 
     const promise = new Promise((resolve) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.myApi).toPromise().then(getResponse => {
-        this.users.name = getResponse.name;
-        this.users.html_url = getResponse.html_url;
-        this.users.login = getResponse.login;
-        this.users.avatar_url = getResponse.avatar_url;
-        this.users.public_repos = getResponse.public_repos;
-        this.users.created_at = getResponse.created_at;
-        this.users.followers = getResponse.followers;
-        this.users.following = getResponse.following;
+       
+        this.users = getResponse
+        
         resolve();
       });
     });
@@ -60,7 +55,8 @@ export class SearchService {
     
     const myPromise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + searchMe + '/repos?order=created&sort=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
-          this.newRepository = getRepoResponse;
+          this.repo = getRepoResponse;
+          
           resolve();
       }, error => {
           reject(error);
@@ -70,21 +66,6 @@ export class SearchService {
 
   }
 
-  gitRepos(searchName){
-    interface ApiResponse{
-      items:any;
-    }
-    const promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + ' &per_page=10 ' + environment.myApi).toPromise().then(getRepoResponse => {
-          this.searchRepo = getRepoResponse.items;
 
-          resolve();
-      }, error => {
-          this.searchRepo = 'error';
-          reject(error);
-      });
-  });
-  return promise;
-  }
 }
 
