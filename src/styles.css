@@ -1,1 +1,8 @@
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+#sah{
+    width: 300px;
+}
+#inp{
+    margin-left: 20px;
+}
