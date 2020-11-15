@@ -7,3 +7,15 @@ img{
     /* background-color:lightsteelblue; */
     margin-bottom: 50px;
     }
+    .container-fluid{
+        background-color: lightcyan;
+    }
+    .card>p{
+        text-align: center;
+    }
+    .ca1{
+        color: olivedrab;
+        margin-left:10px;
+        font-weight: 100;
+
+    }

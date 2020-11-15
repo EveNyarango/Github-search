@@ -1,88 +1,90 @@
 <div class="container-fluid">
-<div class="row">
+  <div class="row">
     <div class="col-md-6">
-        <app-search-form (getName)='githubUser($event)'></app-search-form>
+      <app-search-form (getName)='githubUser($event)'></app-search-form>
     </div>
 
-</div>
-<!-- 
+  </div>
+  <!-- 
 table that picks data -->
-<div class="row">
+  <div class="row">
     <div class="col-md-7">
-        <div class="table table-striped">
+      <div class="table table-striped">
         <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">{{users.name}}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"> Github Username:</th>
-                <td>{{users.login}}</td>
+          <thead>
+            <tr>
+              <th scope="col">{{users.name}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> Github Username:</th>
+              <td>{{users.login}}</td>
 
-              </tr>
+            </tr>
 
-              <tr>
-                <th scope="row">Repositories:</th>
-                <td>{{users.public_repos}}</td>
-              </tr>
+            <tr>
+              <th scope="row">Repositories:</th>
+              <td>{{users.public_repos}}</td>
+            </tr>
 
-              <tr>
-                <th scope="row">Date created:</th>
-                <td>{{users.created_at|dateAgo}}</td>
-              </tr>
+            <tr>
+              <th scope="row">Date created:</th>
+              <td>{{users.created_at|dateAgo}}</td>
+            </tr>
 
-              <tr>
-                <th scope="row">Following:</th>
-                <td>{{users.following}}</td>
-              </tr>
-              <tr>
-                <th scope="row">Followers:</th>
-                <td>{{users.followers}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+            <tr>
+              <th scope="row">Following:</th>
+              <td>{{users.following}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Followers:</th>
+              <td>{{users.followers}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-<div class="col-md-5">
-    <!-- insert avatar -->
-  <img src="{{users.avatar_url}}">
-</div>
+    <div class="col-md-5">
+      <!-- insert avatar -->
+      <img src="{{users.avatar_url}}">
+    </div>
 
-</div>
+  </div>
 
-<!-- Repositories -->
+  <!-- Repositories -->
 
-<h2>Github Repositories</h2>
-<div class="container">
-<div class="row">
-    <div class="col-md-6" *ngFor='let repo of repo'> 
+  <h2>Github Repositories</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" *ngFor='let repo of repo'>
         <div class="card">
-<p>
-    {{repo.name}}
-</p>
-<hr>
-<p>
-{{repo.description}}
-</p>
+          <div class="ca1">
+            <p>
+              {{repo.name}}
+            </p>
+          </div>
+          <hr>
+          <p>
+            {{repo.description}}
+          </p>
 
-<p>
-    {{repo.language}}
-</p>
-<p>
-    {{repo.created_at|dateAgo}}
-</p>
-<hr>
-<div class="card-footer text-center">
-<a href="{{repo.html_url}}"  class="btn btn-primary" target="_blank">View on Github </a>
-</div>
+          <p>
+            {{repo.language}}
+          </p>
+          <p>
+            {{repo.created_at|dateAgo}}
+          </p>
+          <hr>
+          <div class="card-footer text-center">
+            <a href="{{repo.html_url}}" class="btn btn-primary" target="_blank">View on Github </a>
+          </div>
         </div>
 
+      </div>
     </div>
-</div>
 
 
 
-</div>
+  </div>
