@@ -16,8 +16,11 @@ img{
     }
     .ca1{
         color: olivedrab;
-        margin-left:10px;
+        /* margin-left:100px; */
+        margin-top: 20px;
         font-weight: 1000;
+        font-size: 18px;
+        text-align: center;
     }
     .card{
         background-color: lightcyan;
