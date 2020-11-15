@@ -10,6 +10,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 
 
 import { SearchComponent } from './search/search.component';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchComponent } from './search/search.component';
     NavbarComponent,
     SearchFormComponent,
     RepositoriesComponent,
-    SearchComponent
+    SearchComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,

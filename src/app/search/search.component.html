@@ -30,7 +30,7 @@ table that picks data -->
 
               <tr>
                 <th scope="row">Date created:</th>
-                <td>{{users.created_at}}</td>
+                <td>{{users.created_at|dateAgo}}</td>
               </tr>
 
               <tr>
@@ -72,7 +72,7 @@ table that picks data -->
     {{repo.language}}
 </p>
 <p>
-    {{repo.created_at}}
+    {{repo.created_at|dateAgo}}
 </p>
 <hr>
 <div class="card-footer text-center">
