@@ -9,7 +9,7 @@ Eve Nyarang'o
 This website enables the user to search for their github profile and their repositories that links their github projects.
 
 ## Project image
-![Eve](/src/assets/Github screenshot)
+![Eve](src/assets/Ghscreenshot.png)
 
 ## BDD
 Enter Github user name.
