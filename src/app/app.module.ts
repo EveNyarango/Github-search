@@ -11,6 +11,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 
 import { SearchComponent } from './search/search.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { HoveringDirective } from './hovering.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     SearchFormComponent,
     RepositoriesComponent,
     SearchComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    HoveringDirective
   ],
   imports: [
     BrowserModule,
